@@ -1,0 +1,30 @@
+{
+  "name": "jwtauthentication",
+  "version": "1.0.0",
+  "description": "A simple NodeJS, Express, Typescript based Rest service using jwt for the token creation, after autehtication successfully it will alow to access the other rest services.",
+  "main": "build/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlprajapati/jwtauthentication.git"
+  },
+  "keywords": [],
+  "author": "m l prajapati",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.0",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-jwt": "^5.3.0",
+    "method-override": "^2.3.9",
+    "morgan": "^1.8.2",
+    "q": "^1.5.0",
+    "rootpath": "^0.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^2.5.2"
+  }
+}

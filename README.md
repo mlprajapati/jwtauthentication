@@ -47,7 +47,7 @@ This application is created to understand, how we can secure our API using token
 ```
     get http://localhost:3000/users 
     After successful authentication you will get token with response data and set token value 
-    (Mybearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUwNTM4NTU3NX0.UmjKAh4rj2rzG_TKpN4DwjconnJkd2hY0LXO7-qkkqI)
+    (Autherization: Mybearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUwNTM4NTU3NX0.UmjKAh4rj2rzG_TKpN4DwjconnJkd2hY0LXO7-qkkqI)
     with request header of each request. then you will able to get success result of user list.
 ```
 - Response
@@ -110,5 +110,14 @@ tsc
 ```
 node build/server.js
 ```
+## How to test API
+- Use Chrome extention Postman to test API  
+    * Add Api endpoint http://localhost:3001/users/authenticate
+    * Click on body tab
+     inside textarea add input data with given json format {"username":"user2","password":"pass2"}
+    * Befor to click on send button select format as JSON(aaplication/json) from the dropdown
+    * Click on Send button 
+    * You will get response data see screenshot
+    ![Alt text](/images/testservice1.jpg?raw=true "Optional Title")
 ### License
 MIT

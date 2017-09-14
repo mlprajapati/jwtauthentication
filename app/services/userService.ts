@@ -6,8 +6,8 @@ var Q = require('q');
 export class UserService {
     private userList:Array<User> = [];
     constructor() {
-       this.userList.push({id: 1,username:'user1',password:'pass1', email: 'madanmannu@gmail.com',name: {first:'Madan',last:'prajapati'},status: 'true',phoneNumbers: ['1111111111','2222222222']});
-       this.userList.push({id: 2,username:'user2',password:'pass2', email: 'madanmannu2@gmail.com',name: {first:'Madan2',last:'prajapati2'},status: 'true',phoneNumbers: ['1111111112','2222222224']});
+       this.userList.push({id: 1,username:'user1',password:'pass1', email: 'abcd1@gmail.com',name: {first:'User 1',last:'Surname 1'},status: 'true',phoneNumbers: ['1111111111','2222222222']});
+       this.userList.push({id: 2,username:'user2',password:'pass2', email: 'abcd2@gmail.com',name: {first:'User 2',last:'Surname 2'},status: 'true',phoneNumbers: ['1111111112','2222222224']});
       }
     
  

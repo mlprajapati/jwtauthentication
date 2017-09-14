@@ -12,9 +12,3 @@ export interface Name {
     first: string;
     last?: string;
 }
- 
-export interface UserCreationRequest {
-    email: string;
-    name: Name;
-    phoneNumbers: string[];
-}

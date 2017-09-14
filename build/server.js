@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = require("./app");
-// Mount the WelcomeController at the /welcome route
+//generate a port for the host on which application run Ex. for local "http://localhost:3001/" 
 var port = normalizePort(process.env.PORT || 3001);
 app_1.default.set('port', port);
 app_1.default.listen(port, function () {
-    // Success callback
     console.log("Listening at http://localhost:" + port + "/");
 });
 function normalizePort(val) {

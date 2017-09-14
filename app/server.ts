@@ -1,10 +1,9 @@
 import * as express from 'express';
 import App from './app';
-// Mount the WelcomeController at the /welcome route
+//generate a port for the host on which application run Ex. for local "http://localhost:3001/" 
 const port = normalizePort(process.env.PORT || 3001);
 App.set('port', port);
 App.listen(port, () => {
-  // Success callback
   console.log(`Listening at http://localhost:${port}/`);
 });
 

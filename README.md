@@ -118,6 +118,16 @@ node build/server.js
     * Befor to click on send button select format as JSON(aaplication/json) from the dropdown
     * Click on Send button 
     * You will get response data see screenshot
-    ![Alt text](/images/testservice1.jpg?raw=true "Optional Title")
+    ![Alt text](/images/testservice1.jpg?raw=true "First Service")
+
+
+    * Open another tab 
+    * Add Api endpoint http://localhost:3001/users
+    * Click on Headers tab
+    * Copy token value from first service response and use in second service header  
+    * Add Key Value as (Autherization: Mybearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUwNTM4NTU3NX0.UmjKAh4rj2rzG_TKpN4DwjconnJkd2hY0LXO7-qkkqI)
+    * Click on Send button 
+    * You will get response data see screenshot
+    ![Alt text](/images/testservice2.jpg?raw=true "Second Service")
 ### License
 MIT

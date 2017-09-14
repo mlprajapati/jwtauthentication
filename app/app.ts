@@ -13,6 +13,9 @@ class App{
         this.app = express();    
         this.middleware();
         this.routes();
+        this.app.use(function (err:any, req:any, res:any, next:any) {
+            res.status(400).json({code:500,message:'UnauthorizedError: No authorization token was found.'});
+          })
     }
     //This methos sets the pre exicutive setting for api url
     private middleware(): void{

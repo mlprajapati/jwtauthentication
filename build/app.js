@@ -1,28 +1,31 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var config_1 = require("./config");
+const express = require("express");
+const config_1 = require("./config");
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var expressJwt = require('express-jwt');
 // Import UserController from controllers entry point
-var userController_1 = require("./controllers/userController");
-var App = /** @class */ (function () {
-    function App() {
+const userController_1 = require("./controllers/userController");
+class App {
+    constructor() {
         // Creating a new express application instance
         this.app = express();
         this.middleware();
         this.routes();
+        this.app.use(function (err, req, res, next) {
+            res.status(400).json({ code: 500, message: 'UnauthorizedError: No authorization token was found.' });
+        });
     }
     //This methos sets the pre exicutive setting for api url
-    App.prototype.middleware = function () {
+    middleware() {
         this.app.use(cors());
         this.app.use(bodyParser.urlencoded({ extended: false }));
         this.app.use(bodyParser.json());
-    };
+    }
     // Validate the all routes request if it pass the token then it allow to response data otherwise throw error. 
-    App.prototype.routes = function () {
-        var router = express.Router();
+    routes() {
+        let router = express.Router();
         this.app.use(expressJwt({
             secret: config_1.default.secret,
             getToken: function (req) {
@@ -38,7 +41,6 @@ var App = /** @class */ (function () {
         }).unless({ path: ['/users/authenticate'] }));
         //Api end points
         this.app.use('/users', userController_1.default);
-    };
-    return App;
-}());
+    }
+}
 exports.default = new App().app;

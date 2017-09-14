@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var config = {
+const config = {
     "apiUrl": "http://localhost:3001",
     "secret": "mysecret"
 };

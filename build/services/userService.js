@@ -11,11 +11,11 @@ var UserService = /** @class */ (function () {
     }
     UserService.prototype.authenticate = function (username, password) {
         var deferred = Q.defer();
-        var objUser = this.userList.find(function (user) {
+        var objUser = this.userList.filter(function (user) {
             return (user.username === username);
         });
-        if (objUser && objUser.password === password) {
-            deferred.resolve({ email: objUser.email, name: objUser.name.first + ' ' + objUser.name.last, phoneNumbers: objUser.phoneNumbers, token: jwt.sign({ sub: objUser.username }, config_1.default.secret) });
+        if (objUser && objUser[0].password === password) {
+            deferred.resolve({ email: objUser[0].email, name: objUser[0].name.first + ' ' + objUser[0].name.last, phoneNumbers: objUser[0].phoneNumbers, token: jwt.sign({ sub: objUser[0].username }, config_1.default.secret) });
         }
         else {
             deferred.resolve();

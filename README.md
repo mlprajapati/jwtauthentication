@@ -1,18 +1,26 @@
 # jwtauthentication
-This application created to understand how we can secure our application API with token based authentication.
+This application is created to understand, how we can secure our API using token based authentication.
 
 ## Features
 * Node JS, Express, Typescript base
 * cors, body-parser, method-override as url protection
 * express-jwt for token creation and router ristriction
 * Q for promiss based response
-* API Response Logging , Express Server Logging
 * APIs 
     - users - list of users (/users)
     - authentication  - Authentication of user based on login credential (username 7 password)
     - API Partial JSON response support 
 ```
     curl http://localhost:3000/users
+```
+- Response 
+```
+{
+    "code":500,
+    "message":"UnauthorizedError: No authorization token was found."
+}
+```
+    curl http://localhost:3000/users/authenticate
 ```
 - Response 
 ```
@@ -38,7 +46,9 @@ This application created to understand how we can secure our application API wit
 ---
 ```
     get http://localhost:3000/users 
-    After successful authentication you will get token with response data and set token (Mybearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUwNTM4NTU3NX0.UmjKAh4rj2rzG_TKpN4DwjconnJkd2hY0LXO7-qkkqI) value with request header of each request. then you will able to get success result of user list.
+    After successful authentication you will get token with response data and set token value 
+    (Mybearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUwNTM4NTU3NX0.UmjKAh4rj2rzG_TKpN4DwjconnJkd2hY0LXO7-qkkqI)
+    with request header of each request. then you will able to get success result of user list.
 ```
 - Response
 ```
@@ -100,12 +110,5 @@ tsc
 ```
 node build/server.js
 ```
-
-
 ### License
-
 MIT
-
-
-
-

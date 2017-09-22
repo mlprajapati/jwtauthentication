@@ -24,7 +24,7 @@ export class UserService {
         }
         return deferred.promise;
     }
-    public getUser():any{
+    public getUsers():any{
         var deferred = Q.defer();
         if(this.userList){
             deferred.resolve(this.userList);

@@ -20,6 +20,7 @@ This application is created to understand, how we can secure our API using token
     "message":"UnauthorizedError: No authorization token was found."
 }
 ```
+```
     curl http://localhost:3000/users/authenticate
 ```
 - Response 
@@ -28,6 +29,7 @@ This application is created to understand, how we can secure our API using token
     "code":500,
     "message":"UnauthorizedError: No authorization token was found."
 }
+```
 ```
     post http://localhost:3000/users/authenticate with json fromat post data {"username":"user2","password":"pass2"}
 ```

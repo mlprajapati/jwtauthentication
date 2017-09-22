@@ -1,0 +1,41 @@
+[{
+    "name": "product1",
+    "price": 100,
+    "qty": 50,
+    "des": "My product 1",
+    "img": "prod1.png",
+    "status": 1
+},
+{
+    "name": "product2",
+    "price": 200,
+    "qty": 51,
+    "des": "My product 2",
+    "img": "prod2.png",
+    "status": 1
+},
+{
+    "name": "product3",
+    "price": 300,
+    "qty": 52,
+    "des": "My product 3",
+    "img": "prod3.png",
+    "status": 1
+},
+{
+    "name": "product4",
+    "price": 400,
+    "qty": 53,
+    "des": "My product 4",
+    "img": "prod4.png",
+    "status": 1
+},
+{
+    "name": "product5",
+    "price": 500,
+    "qty": 55,
+    "des": "My product 5",
+    "img": "prod5.png",
+    "status": 1
+}
+]

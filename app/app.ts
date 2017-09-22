@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var expressJwt = require('express-jwt');
 // Import UserController from controllers entry point
 import UserController from './controllers/userController';
+import ProductController from './controllers/productController';
 class App{
     // declaring a new express application variable
     public app:express.Application;
@@ -14,7 +15,7 @@ class App{
         this.middleware();
         this.routes();
         this.app.use(function (err:any, req:any, res:any, next:any) {
-            res.status(400).json({code:500,message:'UnauthorizedError: No authorization token was found.'});
+            res.status(400).json({code:500,message:'UnauthorizedError: No authorization token was found.' , err});
           })
     }
     //This methos sets the pre exicutive setting for api url
@@ -29,7 +30,6 @@ class App{
         this.app.use(expressJwt({
             secret: config.secret,
             getToken: function (req:any) {
-                console.log("req.headers.authorization ",req.headers.authorization)
                 if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'MyBearer') {
                     return req.headers.authorization.split(' ')[1];
                 } else if (req.query && req.query.token) {
@@ -37,9 +37,10 @@ class App{
                 }
                 return null;
             }
-        }).unless({ path: ['/users/authenticate'] }));
+        }).unless({ path: ['/users/authenticate','/products'] }));
         //Api end points
         this.app.use('/users', UserController);
+        this.app.use('/products', ProductController);
     }
 
 

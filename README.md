@@ -169,7 +169,7 @@ node build/app/server.js
 npm test
 ```
 ##  Unit test coverage result
-- Use Chrome extention Postman to test API  
+- Use CMD 
     * By running command 'npm test' from CMD result of unit test will looks like as below.
     ![Alt text](/images/unittest1.png?raw=true "Test Result")
 

@@ -6,6 +6,7 @@ This application is created to understand, how we can secure our API using token
 * cors, body-parser, method-override as url protection
 * express-jwt for token creation and router ristriction
 * Q for promiss based response
+* jest, ts-jest, supertest for unit test  
 * APIs 
     - users - list of users (/users)
     - authentication  - Authentication of user based on login credential (username 7 password)
@@ -167,7 +168,12 @@ node build/app/server.js
 ```
 npm test
 ```
-## How to test API
+##  Unit test coverage result
+- Use Chrome extention Postman to test API  
+    * By running command 'npm test' from CMD result of unit test will looks like as below.
+    ![Alt text](/images/unittest1.png?raw=true "Test Result")
+
+## How to test API with Live application
 - Use Chrome extention Postman to test API  
     * Add Api endpoint http://localhost:3001/users/authenticate
     * Click on body tab
@@ -177,7 +183,6 @@ npm test
     * You will get response data see screenshot
     ![Alt text](/images/testservice1.jpg?raw=true "First Service")
 
-
     * Open another tab 
     * Add Api endpoint http://localhost:3001/users
     * Click on Headers tab
@@ -186,5 +191,6 @@ npm test
     * Click on Send button 
     * You will get response data see screenshot
     ![Alt text](/images/testservice2.jpg?raw=true "Second Service")
+
 ### License
 MIT

@@ -9,6 +9,7 @@ This application is created to understand, how we can secure our API using token
 * APIs 
     - users - list of users (/users)
     - authentication  - Authentication of user based on login credential (username 7 password)
+    - products - list of all product (authentication will not apply and this can be assess as open link)
     - API Partial JSON response support 
 ```
     curl http://localhost:3000/users
@@ -87,6 +88,56 @@ This application is created to understand, how we can secure our API using token
     }
 ]
 ```
+---
+```
+    post http://localhost:3000/products
+    Notes- No need to add token information as authentication, this will open as open link
+```
+- Response
+```
+[
+    {
+        "name": "product1",
+        "price": 100,
+        "qty": 50,
+        "des": "My product 1",
+        "img": "prod1.png",
+        "status": 1
+    },
+    {
+        "name": "product2",
+        "price": 200,
+        "qty": 51,
+        "des": "My product 2",
+        "img": "prod2.png",
+        "status": 1
+    },
+    {
+        "name": "product3",
+        "price": 300,
+        "qty": 52,
+        "des": "My product 3",
+        "img": "prod3.png",
+        "status": 1
+    },
+    {
+        "name": "product4",
+        "price": 400,
+        "qty": 53,
+        "des": "My product 4",
+        "img": "prod4.png",
+        "status": 1
+    },
+    {
+        "name": "product5",
+        "price": 500,
+        "qty": 55,
+        "des": "My product 5",
+        "img": "prod5.png",
+        "status": 1
+    }
+]
+```
 
 ## Pre-requisites
 
@@ -110,7 +161,11 @@ tsc
 ```
 ## Run application
 ```
-node build/server.js
+node build/app/server.js
+```
+## Run test
+```
+npm test
 ```
 ## How to test API
 - Use Chrome extention Postman to test API  

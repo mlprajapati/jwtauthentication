@@ -1,7 +1,7 @@
 import * as express from 'express';
 import App from './app';
 //generate a port for the host on which application run Ex. for local "http://localhost:3001/" 
-const port = normalizePort(process.env.PORT || 3001);
+const port = normalizePort(process.env.PORT || 3000);
 App.set('port', port);
 App.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/`);
